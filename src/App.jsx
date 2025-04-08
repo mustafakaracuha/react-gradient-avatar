@@ -41,7 +41,6 @@ export default function App() {
               title="React Avatar"
               size={80}
               shape="circle"
-              color="#F5F3C1"
             />
             <div className="absolute -right-2 -bottom-2 bg-indigo-500 text-white font-semibold text-xs px-2 py-1 rounded-full">
               v2.0
