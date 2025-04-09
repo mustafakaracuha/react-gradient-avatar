@@ -74,7 +74,7 @@ export default function App() {
         </div>
       </header>
       {/* Feature highlights */}
-      <div className="grid grid-cols-3 max-sm:grid-cols-1 justify-center gap-6 w-full max-w-4xl mb-10">
+      <div className="grid grid-cols-3 max-sm:grid-cols-1 justify-center gap-4 max-sm:gap-2 w-full max-w-4xl mb-10">
         {/* Kart 2 - Özelleştirilebilir */}
         <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 transition-transform hover:scale-105 hover:shadow-lg">
           <div className="flex items-center gap-3">
