@@ -63,7 +63,7 @@ export default function App() {
               (window.location.href =
                 "https://www.npmjs.com/package/react-avatar-gradient")
             }
-            className="bg-white text-gray-800 px-6 py-2 rounded-full font-medium flex items-center gap-2 shadow-md hover:shadow-lg border border-gray-200 hover:bg-gray-50 transition-all"
+            className="bg-white cursor-pointer text-gray-800 px-6 py-2 rounded-full font-medium flex items-center gap-2 shadow-md hover:shadow-lg border border-gray-200 hover:bg-gray-50 transition-all"
           >
             <svg
               className="w-5 h-5 text-red-500"
