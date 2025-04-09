@@ -37,11 +37,7 @@ export default function App() {
       <header className="w-full max-w-4xl text-center mb-10 pt-6">
         <div className="flex justify-center mb-4">
           <div className="relative">
-            <Avatar
-              title="React Avatar"
-              size={80}
-              shape="circle"
-            />
+            <Avatar title="React Avatar" size={80} shape="circle" />
             <div className="absolute -right-2 -bottom-2 bg-indigo-500 text-white font-semibold text-xs px-2 py-1 rounded-full">
               v2.0
             </div>
@@ -63,10 +59,10 @@ export default function App() {
               (window.location.href =
                 "https://www.npmjs.com/package/react-avatar-gradient")
             }
-            className="bg-white cursor-pointer text-gray-800 px-6 py-2 rounded-full font-medium flex items-center gap-2 shadow-md hover:shadow-lg border border-gray-200 hover:bg-gray-50 transition-all"
+            className="group bg-white cursor-pointer text-gray-800 px-6 py-2 rounded-full font-medium flex items-center gap-2 shadow-md hover:shadow-lg border border-gray-200 hover:bg-red-500 hover:text-white transition-all"
           >
             <svg
-              className="w-5 h-5 text-red-500"
+              className="w-5 h-5 text-red-500 transition-colors duration-300 group-hover:text-white"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
