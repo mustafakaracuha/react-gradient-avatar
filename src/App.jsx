@@ -3,8 +3,8 @@ import { Avatar } from "react-avatar-gradient";
 import { FaPaintBrush, FaLightbulb, FaBolt, FaLanguage } from "react-icons/fa";
 import { translations } from "./Language";
 
-import unitedKingdom from './assets/united-kingdom.png';
-import turkey from './assets/turkey.png';
+import unitedKingdom from "./assets/united-kingdom.png";
+import turkey from "./assets/turkey.png";
 
 export default function App() {
   const [name, setName] = useState("John Doe");
@@ -45,25 +45,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50 flex flex-col items-center p-6">
-      <div className="absolute top-4 right-4">
-        <button
-          onClick={toggleLanguage}
-          className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all border border-gray-200"
-        >
-          <img
-            src={
-              language === "en"
-                ? unitedKingdom
-                : turkey
-            }
-            alt="Language Flag"
-            className="w-6 h-6"
-          />
-          <span className="font-medium text-gray-700">
-            {language === "en" ? "English" : "Türkçe"}
-          </span>
-        </button>
-      </div>
       <header className="w-full max-w-4xl text-center mb-10 pt-6">
         <div className="flex justify-center mb-4">
           <div className="relative">
@@ -99,6 +80,19 @@ export default function App() {
               <path d="M8 8v8h3v-6h3v6h3V8H8z"></path>
             </svg>
             {t("npmButton")}
+          </button>
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all border border-gray-200"
+          >
+            <img
+              src={language === "en" ? unitedKingdom : turkey}
+              alt="Language Flag"
+              className="w-6 h-6"
+            />
+            <span className="font-medium text-gray-700">
+              {language === "en" ? "English" : "Türkçe"}
+            </span>
           </button>
         </div>
       </header>
