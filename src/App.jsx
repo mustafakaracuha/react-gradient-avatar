@@ -13,7 +13,7 @@ export default function App() {
   const [customColor, setCustomColor] = useState("#FAD2E1");
   const [activeTab, setActiveTab] = useState("demo");
   const [copied, setCopied] = useState(false);
-  const [language, setLanguage] = useState("en"); // 'en' for English, 'tr' for Turkish
+  const [language, setLanguage] = useState(localStorage.getItem ("language") || "en"); // 'en' for English, 'tr' for Turkish
 
   const t = (key) => translations[language][key];
 
@@ -41,6 +41,7 @@ export default function App() {
 
   const toggleLanguage = () => {
     setLanguage(language === "en" ? "tr" : "en");
+    localStorage.setItem("language", language === "en" ? "tr" : "en");
   };
 
   return (
