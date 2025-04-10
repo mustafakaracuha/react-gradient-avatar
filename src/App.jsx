@@ -3,6 +3,9 @@ import { Avatar } from "react-avatar-gradient";
 import { FaPaintBrush, FaLightbulb, FaBolt, FaLanguage } from "react-icons/fa";
 import { translations } from "./Language";
 
+import unitedKingdom from './assets/united-kingdom.png';
+import turkey from './assets/turkey.png';
+
 export default function App() {
   const [name, setName] = useState("John Doe");
   const [size, setSize] = useState(64);
@@ -37,18 +40,28 @@ export default function App() {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'tr' : 'en');
+    setLanguage(language === "en" ? "tr" : "en");
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50 flex flex-col items-center p-6">
-     <div className="absolute top-4 right-4">
-        <button 
+      <div className="absolute top-4 right-4">
+        <button
           onClick={toggleLanguage}
           className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all border border-gray-200"
         >
-          <FaLanguage className="text-xl text-blue-500" />
-          <span className="font-medium text-gray-700">{language === 'en' ? 'English' : 'Türkçe'}</span>
+          <img
+            src={
+              language === "en"
+                ? unitedKingdom
+                : turkey
+            }
+            alt="Language Flag"
+            className="w-6 h-6"
+          />
+          <span className="font-medium text-gray-700">
+            {language === "en" ? "English" : "Türkçe"}
+          </span>
         </button>
       </div>
       <header className="w-full max-w-4xl text-center mb-10 pt-6">
@@ -66,7 +79,7 @@ export default function App() {
           </span>{" "}
         </h1>
         <p className="text-gray-600 max-w-lg mx-auto text-lg">
-        {t('subtitle')}
+          {t("subtitle")}
         </p>
 
         <div className="flex justify-center gap-4 mt-6">
@@ -85,7 +98,7 @@ export default function App() {
               <path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0H1.763zM3 21V3h18v18H3z"></path>
               <path d="M8 8v8h3v-6h3v6h3V8H8z"></path>
             </svg>
-            {t('npmButton')}
+            {t("npmButton")}
           </button>
         </div>
       </header>
@@ -96,10 +109,12 @@ export default function App() {
           <div className="flex items-center gap-3">
             <FaPaintBrush className="text-xl text-gray-500" />
             <div>
-            <div>
-              <h3 className="font-medium text-gray-800">{t('customizable')}</h3>
-              <p className="text-gray-500 text-sm">{t('customizableDesc')}</p>
-            </div>
+              <div>
+                <h3 className="font-medium text-gray-800">
+                  {t("customizable")}
+                </h3>
+                <p className="text-gray-500 text-sm">{t("customizableDesc")}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -109,10 +124,12 @@ export default function App() {
           <div className="flex items-center gap-3">
             <FaLightbulb className="text-xl text-gray-500" />
             <div>
-            <div>
-              <h3 className="font-medium text-gray-800">{t('lightweight')}</h3>
-              <p className="text-gray-500 text-sm">{t('lightweightDesc')}</p>
-            </div>
+              <div>
+                <h3 className="font-medium text-gray-800">
+                  {t("lightweight")}
+                </h3>
+                <p className="text-gray-500 text-sm">{t("lightweightDesc")}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -122,8 +139,8 @@ export default function App() {
           <div className="flex items-center gap-3">
             <FaBolt className="text-xl text-gray-500" />
             <div>
-              <h3 className="font-medium text-gray-800">{t('easy')}</h3>
-              <p className="text-gray-500 text-sm">{t('easyDesc')}</p>
+              <h3 className="font-medium text-gray-800">{t("easy")}</h3>
+              <p className="text-gray-500 text-sm">{t("easyDesc")}</p>
             </div>
           </div>
         </div>
@@ -139,7 +156,7 @@ export default function App() {
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
-            {t('demo')}
+            {t("demo")}
           </button>
           <button
             onClick={() => setActiveTab("installation")}
@@ -149,7 +166,7 @@ export default function App() {
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
-            {t('installation')}
+            {t("installation")}
           </button>
           <button
             onClick={() => setActiveTab("examples")}
@@ -159,7 +176,7 @@ export default function App() {
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
-           {t('examples')}
+            {t("examples")}
           </button>
           <button
             onClick={() => setActiveTab("gallery")}
@@ -169,7 +186,7 @@ export default function App() {
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
-            {t('gallery')}
+            {t("gallery")}
           </button>
         </div>
       </div>
@@ -181,7 +198,7 @@ export default function App() {
               <span className="bg-blue-50 text-blue-600 p-2 rounded-lg mr-3">
                 🧪
               </span>
-              {t('interactiveDemo')}
+              {t("interactiveDemo")}
             </h2>
 
             <div className="flex flex-col md:flex-row md:items-start gap-10">
@@ -206,20 +223,20 @@ export default function App() {
               <div className="flex-1 space-y-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('name')}
+                    {t("name")}
                   </label>
                   <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-4 py-2 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
-                    placeholder={t('enterName')}
+                    placeholder={t("enterName")}
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                  {t('size')}: {size}px
+                    {t("size")}: {size}px
                   </label>
                   <div className="flex items-center gap-4">
                     <input
@@ -231,14 +248,14 @@ export default function App() {
                       className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500"
                     />
                     <span className="text-sm bg-gray-100 px-2 py-1 rounded w-12 text-center">
-                    {size}
+                      {size}
                     </span>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                  {t('shape')}
+                    {t("shape")}
                   </label>
                   <div className="flex gap-3">
                     <button
@@ -250,7 +267,7 @@ export default function App() {
                       }`}
                     >
                       <div className="w-10 h-10 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm font-medium">{t('circle')}</span>
+                      <span className="text-sm font-medium">{t("circle")}</span>
                     </button>
                     <button
                       onClick={() => setShape("square")}
@@ -261,14 +278,14 @@ export default function App() {
                       }`}
                     >
                       <div className="w-10 h-10 bg-blue-500 rounded-lg"></div>
-                      <span className="text-sm font-medium">{t('square')}</span>
+                      <span className="text-sm font-medium">{t("square")}</span>
                     </button>
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
-                  {t('color')}
+                    {t("color")}
                   </label>
                   <div className="flex flex-wrap gap-3">
                     {[
@@ -316,13 +333,13 @@ export default function App() {
               <span className="bg-purple-50 text-purple-600 p-2 rounded-lg mr-3">
                 📦
               </span>
-              {t('installation')}
+              {t("installation")}
             </h2>
 
             <div className="space-y-8">
               <div className="mb-6">
                 <div className="flex items-center justify-between bg-gray-800 text-white p-3 rounded-t-lg">
-                <span className="text-gray-300">{t('terminal')}</span>
+                  <span className="text-gray-300">{t("terminal")}</span>
                   <button
                     onClick={copyInstallCommand}
                     className="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded flex items-center gap-1"
@@ -342,7 +359,7 @@ export default function App() {
                             d="M5 13l4 4L19 7"
                           />
                         </svg>
-                        {t('copied')}
+                        {t("copied")}
                       </>
                     ) : (
                       <>
@@ -359,7 +376,7 @@ export default function App() {
                             d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
                           />
                         </svg>
-                        {t('copy')}
+                        {t("copy")}
                       </>
                     )}
                   </button>
@@ -371,7 +388,7 @@ export default function App() {
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                {t('basicUsage')}
+                  {t("basicUsage")}
                 </h3>
 
                 <div className="bg-gray-800 text-white p-3 rounded-t-lg flex justify-between">
@@ -396,21 +413,19 @@ function App() {
               </div>
 
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <h4 className="font-medium text-blue-800 mb-1">
-                {t('props')}
-                </h4>
+                <h4 className="font-medium text-blue-800 mb-1">{t("props")}</h4>
                 <ul className="space-y-2 text-sm text-gray-700">
-                <li>
-                    <strong>title:</strong> {t('propTitle')}
+                  <li>
+                    <strong>title:</strong> {t("propTitle")}
                   </li>
                   <li>
-                    <strong>size:</strong> {t('propSize')}
+                    <strong>size:</strong> {t("propSize")}
                   </li>
                   <li>
-                    <strong>shape:</strong> {t('propShape')}
+                    <strong>shape:</strong> {t("propShape")}
                   </li>
                   <li>
-                    <strong>color:</strong> {t('propColor')}
+                    <strong>color:</strong> {t("propColor")}
                   </li>
                 </ul>
               </div>
@@ -424,13 +439,13 @@ function App() {
               <span className="bg-green-50 text-green-600 p-2 rounded-lg mr-3">
                 📝
               </span>
-              {t('usageExamples')}
+              {t("usageExamples")}
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all">
                 <Avatar title="John Doe" size={72} />
-                <span className="mt-4 text-lg font-medium">{t('default')}</span>
+                <span className="mt-4 text-lg font-medium">{t("default")}</span>
                 <code className="mt-2 text-sm bg-gray-50 p-3 rounded-md w-full text-center border border-gray-100">
                   &lt;Avatar title="John Doe" /&gt;
                 </code>
@@ -438,7 +453,9 @@ function App() {
 
               <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all">
                 <Avatar title="Alex Johnson" shape="square" size={72} />
-                <span className="mt-4 text-lg font-medium">{t('squareShape')}</span>
+                <span className="mt-4 text-lg font-medium">
+                  {t("squareShape")}
+                </span>
                 <code className="mt-2 text-sm bg-gray-50 p-3 rounded-md w-full text-center border border-gray-100">
                   &lt;Avatar title="Alex" shape="square" /&gt;
                 </code>
@@ -446,7 +463,9 @@ function App() {
 
               <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col items-center hover:shadow-lg transition-all">
                 <Avatar title="Mustafa Karaçuha" color="#FAD2E1" size={72} />
-                <span className="mt-4 text-lg font-medium">{t('customColor')}</span>
+                <span className="mt-4 text-lg font-medium">
+                  {t("customColor")}
+                </span>
                 <code className="mt-2 text-sm bg-gray-50 p-3 rounded-md w-full text-center border border-gray-100">
                   &lt;Avatar title="Mustafa" color="#FAD2E1" /&gt;
                 </code>
@@ -458,7 +477,9 @@ function App() {
                   <Avatar title="Group" size={48} />
                   <Avatar title="Users" size={48} />
                 </div>
-                <span className="mt-4 text-lg font-medium">{t('avatarGroup')}</span>
+                <span className="mt-4 text-lg font-medium">
+                  {t("avatarGroup")}
+                </span>
                 <code className="mt-2bg-gray-50 p-3 rounded-md w-full text-center border border-gray-100 text-xs">
                   &lt;AvatarGroup users=&#123;[&#123;title: 'Takım'&#125;,
                   &#123;title: 'Grup'&#125;]&#125; /&gt;
@@ -468,36 +489,38 @@ function App() {
 
             <div className="mt-8 p-6 bg-gray-50 rounded-xl border border-gray-100">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">
-              {t('advancedUsage')}
+                {t("advancedUsage")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-medium text-gray-700 mb-2">
-                  {t('userCardExample')}
+                    {t("userCardExample")}
                   </h4>
                   <div className="bg-white p-4 rounded-lg shadow flex items-center gap-4 border border-gray-200">
                     <Avatar title="Mustafa Karaçuha" size={56} />
                     <div>
                       <div className="font-medium">Mustafa Karaçuha</div>
-                      <div className="text-sm text-gray-500">{t('developer')}</div>
+                      <div className="text-sm text-gray-500">
+                        {t("developer")}
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700 mb-2">
-                  {t('commentExample')}
+                    {t("commentExample")}
                   </h4>
                   <div className="bg-white p-4 rounded-lg shadow border border-gray-200">
                     <div className="flex items-center gap-3 mb-2">
                       <Avatar title="Ahmet Yılmaz" size={32} />
                       <div>
                         <div className="font-medium text-sm">Ahmet Yılmaz</div>
-                        <div className="text-xs text-gray-500">{t('yesterday')}</div>
+                        <div className="text-xs text-gray-500">
+                          {t("yesterday")}
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600">
-                    {t('commentText')}
-                    </p>
+                    <p className="text-sm text-gray-600">{t("commentText")}</p>
                   </div>
                 </div>
               </div>
@@ -511,7 +534,7 @@ function App() {
               <span className="bg-pink-50 text-pink-600 p-2 rounded-lg mr-3">
                 🖼️
               </span>
-              {t('avatarGallery')}
+              {t("avatarGallery")}
             </h2>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
@@ -540,7 +563,7 @@ function App() {
 
             <div className="mt-10 bg-gray-50 p-6 rounded-lg">
               <h3 className="text-lg font-medium text-gray-800 mb-4">
-              {t('colorPalette')}
+                {t("colorPalette")}
               </h3>
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-4">
                 {[
@@ -572,7 +595,7 @@ function App() {
             Mustafa Karaçuha
           </p>
           <p className="text-gray-600 text-center text-sm mb-4">
-          {t('followText')}
+            {t("followText")}
           </p>
           <div className="flex gap-8">
             {/* GitHub Link */}
@@ -612,9 +635,7 @@ function App() {
               </svg>
             </a>
           </div>
-          <p className="text-gray-400 text-xs mt-6">
-          {t('copyright')}
-          </p>
+          <p className="text-gray-400 text-xs mt-6">{t("copyright")}</p>
         </div>
       </footer>
     </div>
