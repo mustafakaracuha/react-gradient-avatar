@@ -588,6 +588,51 @@ function App() {
                 </pre>
               </div>
 
+              <div>
+                <h3
+                  className={`text-lg font-semibold ${
+                    darkMode ? "text-white" : "text-gray-800"
+                  } mb-3`}
+                >
+                  {t("basicAvatarGroup")}
+                </h3>
+
+                <div className="bg-gray-800 text-white p-3 rounded-t-lg flex justify-between">
+                  <span className="text-gray-300">App.jsx</span>
+                </div>
+                <pre
+                  className={`${
+                    darkMode ? "bg-gray-900" : "bg-gray-900"
+                  } text-yellow-400 p-4 rounded-b-lg overflow-x-auto text-sm font-mono`}
+                >
+                  {`import React from 'react';
+import { AvatarGroup } from 'react-avatar-gradient';
+
+const users = [
+  { title: 'Mustafa Karaçuha' },
+  { title: 'Zeynep Yılmaz' },
+  { title: 'Ali Demir' },
+  { title: 'Ayşe Arslan' },
+];
+
+function App() {
+  return (
+    <div className="app p-8">
+      <h1 className="text-xl font-semibold mb-4">Takım Üyeleri</h1>
+      <div className="flex items-center gap-4">
+        <AvatarGroup
+          avatars={users.map((user) => ({
+            title: user.title,
+          }))}
+          size={64}
+        />
+      </div>
+    </div>
+  );
+}`}
+                </pre>
+              </div>
+
               <div
                 className={`${
                   darkMode
@@ -600,7 +645,7 @@ function App() {
                     darkMode ? "text-blue-200" : "text-blue-800"
                   } mb-1`}
                 >
-                  {t("props")}
+                  Avatar {t("props")}
                 </h4>
                 <ul
                   className={`space-y-2 text-sm ${
@@ -618,6 +663,43 @@ function App() {
                   </li>
                   <li>
                     <strong>color:</strong> {t("propColor")}
+                  </li>
+                </ul>
+              </div>
+              <div
+                className={`${
+                  darkMode
+                    ? "bg-yellow-900 border-yellow-800"
+                    : "bg-yellow-50 border-yellow-500"
+                } border-l-4 p-4 rounded`}
+              >
+                <h4
+                  className={`font-medium ${
+                    darkMode ? "text-yellow-200" : "text-yellow-800"
+                  } mb-1`}
+                >
+                  AvatarGroup {t("props")}
+                </h4>
+                <ul
+                  className={`space-y-2 text-sm ${
+                    darkMode ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
+                  <li>
+                    <strong>title:</strong> {t("propTitle")}
+                  </li>
+                  <li>
+                    <strong>size:</strong> {t("propSize")}
+                  </li>
+                  <li>
+                    <strong>shape:</strong> {t("propShape")}
+                  </li>
+                  <li>
+                    <strong>color:</strong> {t("propColor")}
+                  </li>
+                  <li>
+                    <strong>avatars:</strong>
+                    {t("propAvatars")}
                   </li>
                 </ul>
               </div>
@@ -749,7 +831,7 @@ function App() {
                     darkMode ? "border-gray-600" : "border-gray-100"
                   } ${darkMode ? "text-gray-300" : "text-gray-700"}`}
                 >
-                  &lt;AvatarGroup users=&#123;[&#123;title: 'Team'&#125;,
+                  &lt;AvatarGroup avatars=&#123;[&#123;title: 'Team'&#125;,
                   &#123;title: 'Group'&#125;]&#125; /&gt;
                 </code>
               </div>

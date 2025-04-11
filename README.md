@@ -50,6 +50,8 @@ export default App;
 | `size` | number | 40 | Size of the avatar in pixels |
 | `shape` | 'circle' \| 'square' | 'circle' | Shape of the avatar |
 | `color` | string | '#FFB6C1' | Color of the avatar |
+| `avatars` | string | random | Array of avatar names (required) |
+
 
 ## How It Works
 
